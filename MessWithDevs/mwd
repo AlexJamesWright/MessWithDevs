@@ -29,14 +29,8 @@ EXE=[".cc", ".c", ".cpp", ".cxx", ".cu", ".c++", ".js", ".java", ".ii", \
 
 inputFile=0
 FileList = []
-if '-r' in sys.argv:
-    mode='-r'
-elif '-rf' in sys.argv:
-    mode='-rf'
-    subprocess.call(['mv', '.'+File, File])
-    sys.exit(1)
-else:
-    mode='-f'
+
+# Get files
 for arg in sys.argv:
     if (arg.find('.')>=0):
         if arg[-2:] in EXE or arg[-3:] in EXE or arg[-4:] in EXE or arg[-5:] in EXE:
@@ -45,6 +39,19 @@ for arg in sys.argv:
 if not inputFile:
     print("No valid input file.")
     sys.exit(1)
+
+# Get flags
+if '-r' in sys.argv:
+    mode='-r'
+elif '-rf' in sys.argv:
+    mode='-rf'
+    for File in FileList:
+        subprocess.call(['rm', File])
+        subprocess.call(['mv', File[:len(os.getcwd())+1] + '.' + File[len(os.getcwd())+1:], File])
+    sys.exit(1)
+else:
+    mode='-f'
+
 
 for File in FileList:
     subprocess.call(['cp', File, 'source.txt'])
@@ -95,6 +102,7 @@ for File in FileList:
     # subprocess.call(['ls', '-la', direc])
     subprocess.call(['mv', 'target.txt', File])
     if mode=='-f':
-        subprocess.call(['mv', os.getcwd() + '/source.txt', '.' + File])
-
+        subprocess.call(['mv', os.getcwd() + '/source.txt', File[:len(os.getcwd())+1] + '.' + File[len(os.getcwd())+1:]])
+    else:
+        subprocess.call(['rm', os.getcwd() + '/source.txt'])
     # Fin.
