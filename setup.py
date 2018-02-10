@@ -9,7 +9,7 @@
 from setuptools import setup
 
 setup(name='MessWithDevs',
-      version='0.1.1',
+      version='0.1.2',
       description='Swaps characters in a text file with indistinguishable doppelgangers to break code (damage is reversible!)',
       url='https://github.com/AlexJamesWright/MessWithDevs',
       author='Alex James Wright',
