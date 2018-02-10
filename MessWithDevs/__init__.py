@@ -32,22 +32,28 @@ def ruin():
 
     inputFile=0
     FileList = []
-
+    useExe = None
+    userExeLen=1
     # Get files
-    for arg in sys.argv:
-        if (arg.find('.')>=0 and not arg[-11:]=='__init__.py'):
-            if arg[-2:] in EXE or arg[-3:] in EXE or arg[-4:] in EXE or arg[-5:] in EXE:
-                inputFile+=1
-                FileList.append(arg)
-    if not inputFile:
-        print("No valid input file.")
-        sys.exit(-1)
-
+    if '-e' in sys.argv:
+        useExe = sys.argv[sys.argv.index('-e') + 1]
+        userExeLen = len(useExe)
+        EXE.append(useExe)
     # Get flags
     if '-r' in sys.argv:
         mode='-r'
     else:
         mode='-f'
+
+    for i, arg in enumerate(sys.argv):
+        if (arg.find('.')>=0 and not arg[-11:]=='__init__.py'):
+            if (arg[-2:] in EXE or arg[-3:] in EXE or arg[-4:] in EXE or arg[-5:] in EXE or arg[-userExeLen:] in EXE) and arg!=useExe:
+                inputFile+=1
+                FileList.append(arg)
+
+    if not inputFile:
+        print("No valid input file.")
+        sys.exit(-1)
 
     for File in FileList:
         subprocess.call(['cp', File, 'source.txt'])
