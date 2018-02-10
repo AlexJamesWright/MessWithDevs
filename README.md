@@ -32,6 +32,13 @@ and the following to reverse it:
 
   `mwd _filename_ -r`.
 
+If the file extension you are after is not in the list, you can specify it with
+the `-e` flag:
+
+  `mwd _filename_ -e .exe`,
+
+this flag must also be on when doing the reverse process.
+
 Simple.
 
 Enjoy!
