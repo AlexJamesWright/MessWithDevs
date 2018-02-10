@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+#============================================================================
+# Name        : __init__.py
+# Author      : Alex James Wright
+# Version     : 0.1
+# Copyright   : MIT
+# Description : Script to swap characters, contains ruin()
+#============================================================================
+
+
 import sys
 import os
 import subprocess

@@ -1,3 +1,11 @@
+#============================================================================
+# Name        : setup.py
+# Author      : Alex James Wright
+# Version     : 0.1
+# Copyright   : MIT
+# Description : PyPi setup file
+#============================================================================
+
 from setuptools import setup
 
 setup(name='MessWithDevs',

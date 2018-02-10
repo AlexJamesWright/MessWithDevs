@@ -1,3 +1,11 @@
+#============================================================================
+# Name        : test_mwd.py
+# Author      : Alex James Wright
+# Version     : 0.1
+# Copyright   : MIT
+# Description : Tests for command line tool, ensures process reverses
+#============================================================================
+
 import unittest
 import subprocess
 import os
