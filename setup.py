@@ -10,7 +10,7 @@ from setuptools import setup
 
 setup(name='MessWithDevs',
       version='0.1',
-      description='Swaps characters in a text file with indistinguishable doppelgangers to break code',
+      description='Swaps characters in a text file with indistinguishable doppelgangers to break code (damage is reversible!)',
       url='https://github.com/AlexJamesWright/MessWithDevs',
       author='Alex James Wright',
       author_email='a.j.wright@soton.ac.uk',
