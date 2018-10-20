@@ -1,5 +1,7 @@
 # MessWithDevs
 
+[![Build Status](https://travis-ci.org/AlexJamesWright/MessWithDevs.svg?branch=master)](https://travis-ci.org/AlexJamesWright/MessWithDevs)
+
 Wind up people that leave their computers unattended, they should probably learn
 if they haven't already!
 
